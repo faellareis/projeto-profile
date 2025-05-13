@@ -5,15 +5,18 @@ import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.AddCircle
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.ArrowForward
 import androidx.compose.material.icons.filled.Call
 import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.MailOutline
 import androidx.compose.material.icons.filled.Person
+import androidx.compose.material.icons.filled.Share
 import androidx.compose.material.icons.filled.Star
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -288,9 +291,11 @@ fun TelaProfile(modifier: Modifier = Modifier) {
                     color = Color.Black,
                     fontSize = 13.sp,
                     modifier = Modifier
-                        .padding(top = 5.dp,
-                            bottom = 8.dp)
-                            .padding(horizontal = 23.dp),
+                        .padding(
+                            top = 5.dp,
+                            bottom = 8.dp
+                        )
+                        .padding(horizontal = 23.dp),
                 )
                 Text(
                     modifier = Modifier
@@ -304,8 +309,10 @@ fun TelaProfile(modifier: Modifier = Modifier) {
                     color = Color.Black,
                     fontSize = 13.sp,
                     modifier = Modifier
-                        .padding(top = 5.dp,
-                            bottom = 8.dp)
+                        .padding(
+                            top = 5.dp,
+                            bottom = 8.dp
+                        )
                         .padding(horizontal = 23.dp),
                 )
                 HorizontalDivider(
@@ -348,8 +355,10 @@ fun TelaProfile(modifier: Modifier = Modifier) {
                     color = Color.Black,
                     fontSize = 13.sp,
                     modifier = Modifier
-                        .padding(top = 5.dp,
-                            bottom = 8.dp)
+                        .padding(
+                            top = 5.dp,
+                            bottom = 8.dp
+                        )
                         .padding(horizontal = 23.dp),
                 )
                 HorizontalDivider(
@@ -416,6 +425,101 @@ fun TelaProfile(modifier: Modifier = Modifier) {
                         ),
                     color = Color(0x3CA6A5A3)
                 )
+                Row(
+                    modifier = Modifier
+                        .padding(horizontal = 10.dp)
+                        .padding(15.dp),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.Person,
+                        contentDescription = " ",
+                        tint = Color(0xFFEC829B),
+                        modifier = Modifier.size(22.dp)
+                    )
+                    Text(
+                        text = stringResource(R.string.leads_by),
+                        fontSize = 15.sp,
+                        color = Color.Black,
+                        modifier = Modifier.padding(start = 8.dp)
+                    )
+                }
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 23.dp),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Text(
+                        text = stringResource(R.string.darrell_steward),
+                        color = Color.Black,
+                        fontSize = 13.sp
+                    )
+                    Spacer(modifier = Modifier.weight(1f))
+                    Button(
+                        onClick = { },
+                        contentPadding = PaddingValues(0.dp),
+                        modifier = Modifier.size(36.dp),
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = Color(0xFFEC829B)
+                        )
+                    ) {
+                        Icon(
+                            imageVector = Icons.Filled.ArrowForward,
+                            contentDescription = "",
+                            tint = Color.White
+                        )
+                    }
+                }
+                Column(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(bottom = 16.dp),
+                    verticalArrangement = Arrangement.Bottom,
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Button(
+                            onClick = { },
+                            colors = ButtonDefaults.buttonColors(
+                                containerColor = Color.White,
+                                contentColor = Color(0xFFEC829B)
+                            ),
+                            border = BorderStroke(1.dp,
+                                Color(0xFFBDBDBD))
+                        ) {
+                            Icon(
+                                imageVector = Icons.Default.AddCircle,
+                                contentDescription = " ",
+                                tint = Color(0xFFEC829B),
+                                modifier = Modifier.size(22.dp)
+                            )
+                            Spacer(modifier = Modifier.width(4.dp))
+                            Text(text = stringResource(R.string.add),
+                                color = Color.Black,
+                            )
+                        }
+                        Spacer(modifier = Modifier.width(16.dp))
+                        Button(
+                            onClick = { },
+                            colors = ButtonDefaults.buttonColors(
+                                containerColor = Color.White,
+                                contentColor = Color(0xFF1F1F1F)
+                            ),
+                            border = BorderStroke(1.dp, Color(0xFFBDBDBD)),
+                            contentPadding = PaddingValues(8.dp)
+                        ) {
+                            Icon(
+                                imageVector = Icons.Default.Share,
+                                contentDescription = "",
+                                tint = Color(0xFFEC829B),
+                                modifier = Modifier.size(20.dp)
+                            )
+                        }
+                    }
+                }
             }
         }
     }
